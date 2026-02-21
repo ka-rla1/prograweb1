@@ -1,0 +1,486 @@
+
+
+/* Aquí reinicio configuraciones del navegador
+para que todo se vea igual en cualquier dispositivo */
+html{
+    box-sizing: border-box; /* padding y border no aumentan el tamaño */
+    font-size: 62.5%; /* 1rem = 10px, así los cálculos son más fáciles */
+}
+
+/* Aplico el mismo comportamiento a todos los elementos */
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Las imágenes se adaptan solas y no se deforman */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* FUENTES  */ 
+
+/* Configuración general del texto */
+body {
+    font-family: "Raleway", sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    margin: 0;
+
+    /* Aquí puedo cambiar el color o fondo general de TODA la página */
+    background-color: #f3f7f3;
+
+    /* Esto hace que el footer siempre quede hasta abajo */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/*  GLOBALES  */
+
+/* Fuente elegante solo para títulos */
+h1, h2, h3 {
+    font-family: "Playfair Display", serif;
+    margin: 0 0 3rem;
+}
+
+/* Aquí puedo modificar tamaños de títulos si quiero más grandes o pequeños */
+h1 { font-size: 5rem; }
+h2 { font-size: 4rem; }
+h3 { font-size: 2.5rem; }
+
+/* Quito subrayado azul de links */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Clase rápida para centrar texto */
+.text-center {
+    text-align: center;
+}
+
+/* Este contenedor centra el contenido y limita el ancho */
+.contenedor {
+    max-width: 100rem; /* Mantengo tu tamaño original */
+    margin: 0 auto;
+    width: 95%;
+}
+
+/* Empuja el footer hacia abajo */
+main{
+    flex: 1;
+}
+
+
+/*  COLORES GRANJA */
+
+/* Aquí guardo mis colores principales para reutilizarlos */
+:root{
+    --verde:#2e7d32;
+    --verde-oscuro:#1b5e20;
+    --verde-claro:#e8f5e9;
+}
+
+
+/*  HEADER CON LOGO */
+
+/* Fondo verde del encabezado */
+.header-granja{
+    background: var(--verde); /* Aquí puedo cambiar el color del header */
+    padding: 2rem 0;
+    color: white;
+}
+
+/* Alineo logo y texto en fila */
+.header-flex{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:2rem; /* Espacio entre logo y título */
+}
+
+/* Tamaño del logo (aquí puedo hacerlo más grande o pequeño) */
+.logo{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+}
+
+/* Estilo del nombre */
+.nombre-sitio{
+    margin:0;
+    color:white;
+}
+
+
+/* NAV  */
+
+/* Menú horizontal */
+.navegacion-principal {
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-between; /* Mantengo tu distribución original */
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+}
+
+.menu-toggle span{
+    display: block;
+    width: 2rem;
+    height: 0.25rem;
+    background-color: black;
+    margin-bottom: 0.5rem;
+}
+
+/* Efecto hover */
+.navegacion-principal a:hover{
+    color: var(--verde);
+    font-weight: bold;
+}
+
+
+/*  HERO  */
+
+/* Banner principal con imagen */
+.hero{
+    background-image: url("../img/gallinas.jpeg"); /* Aquí cambio la foto */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    height: 40rem; /* Aquí controlo la altura del banner */
+}
+
+
+/*  SECCIÓN NOSOTROS  */
+
+/* Espaciado vertical */
+.seccion-nosotros{
+    padding: 6rem 0;
+}
+
+/*  SECCIÓN NOSOTROS (MISIÓN - VISIÓN - VALORES)*/
+
+/* Espaciado vertical más amplio para que respire la sección */
+.seccion-nosotros{
+    padding: 8rem 0;
+    background: linear-gradient(to bottom, #f3f7f3, #e0efe3); /* degradado suave */
+}
+
+/* Grid automático responsivo */
+.cards-nosotros{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+
+/*  TARJETAS NUEVO DISEÑO  */
+.card-nosotros{
+    background: white;
+    padding: 3rem;
+    border-radius: 3rem; /* más moderno */
+    text-align:center;
+
+    /* sombra más elegante */
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+
+    /* transición suave */
+    transition: all .35s ease;
+
+    /* línea decorativa superior */
+    border-top: 6px solid var(--verde);
+}
+
+
+/* efecto hover más vistoso */
+.card-nosotros:hover{
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 18px 35px rgba(0,0,0,.15);
+}
+
+
+/* títulos */
+.card-nosotros h3{
+    color: var(--verde-oscuro);
+    font-size: 2.6rem;
+    margin-bottom: 1.5rem;
+}
+
+
+/* texto */
+.card-nosotros p{ 
+    color: #555;
+    font-size: 1.6rem;
+    line-height: 1.7;
+}
+
+
+/* COLORES DIFERENTES POR CUADRO */
+/* Misión */
+.card-nosotros:nth-child(1){
+    border-top-color: #2e7d32;
+}
+
+/* Visión */
+.card-nosotros:nth-child(2){
+    border-top-color: #1e88e5;
+}
+
+/* Valores */
+.card-nosotros:nth-child(3){
+    border-top-color: #ff9800;
+}
+
+/* Extra (si agregas más) */
+.card-nosotros:nth-child(4){
+    border-top-color: #8e24aa;
+}
+
+
+/*PRODUCTOS  */
+
+.contenido-principal{
+    padding-top: 5rem;
+}
+
+/* Mantengo tu GRID ORIGINAL de 6 columnas */
+.listado-productos{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* NO lo cambio */
+    gap: 2rem;
+}
+
+/* Tarjeta producto */
+.producto {
+    background-color: var(--verde);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+/* Texto interno */
+.texto-producto{
+    text-align:left;
+    color: white;
+    padding: 2rem;
+}
+
+/* Precio más grande para que destaque */
+.texto-producto .precio{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+
+/* GRID PRODUCTOS PERSONALIZADO  */
+
+/* Aquí distribución especial */
+.producto:nth-child(1) {
+    grid-column: 2 / 6; /* producto grande central */
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.producto:nth-child(2) { grid-column: 2 / 3; }
+.producto:nth-child(3) { grid-column: 3 / 4; }
+.producto:nth-child(4) { grid-column: 4 / 5; }
+.producto:nth-child(5) { grid-column: 5 / 6; }
+.producto:nth-child(6) { grid-column: 6 / 7; }
+
+
+/*  BOTÓN  */
+
+.btn{
+    background-color: #22bc65;
+    display:block;
+    color:white;
+    font-weight:900;
+    text-transform:uppercase;
+    padding:1rem; /* aquí cambio el tamaño del botón */
+    border-radius:.5rem;
+    transition:.3s;
+}
+
+.btn:hover{
+    background-color: var(--verde-oscuro);
+    cursor:pointer;
+}
+
+
+/* FOOTER  */
+
+/* Pie de página fijo abajo */
+.footer{
+    background: var(--verde-oscuro);
+    color: white;
+    padding: 3rem 0;
+    margin-top: auto; /* esto lo mantiene siempre abajo */
+}
+
+/* Organizo la info en columnas */
+.footer-grid{
+    display:flex;
+    justify-content: space-between;
+    gap:2rem;
+    flex-wrap:wrap;
+}
+
+/* Quito la cursiva automática del address */
+.footer-info address{
+    font-style: normal;
+}
+
+/* LINKS REDES  */
+
+/* Aquí organizo los links uno debajo del otro */
+.footer-redes{
+    display:flex;
+    flex-direction: column; /* los pongo en lista vertical */
+    gap: .8rem;
+}
+
+/* Aquí cambio color, tamaño o estilo del texto */
+.footer-redes a{
+    color: white;
+    font-size: 1.5rem;
+    transition: .3s;
+}
+
+/* Efecto cuando paso el mouse */
+.footer-redes a:hover{
+    color: #a5d6a7; /* verde claro */
+    transform: translateX(5px); /* pequeño movimiento */
+}
+
+/* Texto final */
+.copyright{
+    text-align:center;
+    margin-top:2rem;
+}
+
+
+/* ESTILOS TABLET FIRST */
+
+@media(max-width: 992px){
+
+    /* NAVEGACIÓN */
+    .navegacion-principal{
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .menu-toggle{
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 1.5rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* BODY */
+    .listado-categorias{
+        grid-template-columns: repeat(2, 1fr);
+        /* solo 2 columnas cuando la pantalla sea menor a 992 px */
+    }
+
+    .listado-productos{
+        grid-template-columns: repeat(2, 1fr);
+        /* solo 2 columnas cuando la pantalla sea menor a 992 px */
+    }
+
+    .producto:nth-child(n){
+        grid-column: auto;
+        display: block;
+    }
+
+    .sobre-nosotros{
+        background-image: none;
+        padding: 5rem;
+        background-color: #037bc0;
+    }
+
+    .sobre-nosotros-grid{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .texto-nosotros{
+        flex-basis: 100%;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .grid-footer{
+        grid-template-columns: repeat(2, 1fr);
+        padding-left: 5rem;
+    }
+
+}
+
+/* ESTILOS MOBILE FIRST */
+
+@media(max-width: 600px){
+
+    .listado-categorias{
+        grid-template-columns: repeat(1, 1fr);
+        /* solo 2 columnas cuando la pantalla sea menor a 992 px */
+    }
+
+    .listado-productos{
+        grid-template-columns: repeat(1, 1fr);
+        /* solo 2 columnas cuando la pantalla sea menor a 992 px */
+    }
+
+    .producto:nth-child(n){
+        grid-column: auto;
+        display: block;
+    }
+
+    .sobre-nosotros{
+        background-image: none;
+        padding: 5rem;
+        background-color: #037bc0;
+    }
+
+    .sobre-nosotros-grid{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .texto-nosotros{
+        flex-basis: 100%;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .grid-footer{
+        grid-template-columns: repeat(1, 1fr);
+        text-align: center;
+        padding-left: 0rem;
+    }
+
+}
